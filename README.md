@@ -40,8 +40,8 @@ cd <repository-name>
 
 ### Example 1: Basic Chat
 1. Select `llama3.2` from the sidebar.
-2. Enter the query: "What is the capital of France?"
-3. The assistant responds: "The capital of France is Paris."
+2. Enter the query: "What's the most popular university in Kazakhstan?"
+3. The assistant responds: "Astana IT University." (probably)
 4. The interaction is saved in ChromaDB with metadata.
 
 ### Example 2: Inspect ChromaDB
