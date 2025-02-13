@@ -1,3 +1,6 @@
+
+# Chat Application with Streamlit and LLM Integration  
+
 ## Installation  
 
 ### Prerequisites  
@@ -56,7 +59,7 @@ cd <repository-name>
 ### Example 1: Chat and Store in MongoDB  
 1. Select `llama3.2` from the sidebar.  
 2. Enter the query: "What is the constitution of the Republic of Kazakhstan?"  
-3. The assistant responds with an explanation based on the constitution document. (Hopefully)
+3. The assistant responds with an explanation based on the constitution document.  
 
 ### Example 2: Inspect MongoDB  
 1. After several interactions, click the **Check MongoDB** button.  
