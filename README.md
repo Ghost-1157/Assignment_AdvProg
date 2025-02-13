@@ -1,66 +1,55 @@
+# Chat with OpenAI using Streamlit and MongoDB
 
-# Chat Application with Streamlit and LLM Integration  
+## Installation
 
-## Installation  
-
-### Prerequisites  
-1. **Python Version**: Ensure Python 3.8 or higher is installed.  
-2. **Dependencies**: Install the required libraries:  
+### Prerequisites
+1. **Python Version**: Ensure Python 3.8 or higher is installed.
+2. **Dependencies**: Install the required libraries:
    ```bash
-   pip install streamlit llama-index chromadb pymongo
+   pip install streamlit openai pymongo
    ```  
-   **Note**: `pymongo` is added for MongoDB support.  
-3. **External Tools**:  
-   - **Ollama LLM server** (macOS only):  
-     ```bash
-     brew install ollama
-     ```  
-   - **MongoDB**: Ensure MongoDB is installed and running on your system. [Download MongoDB](https://www.mongodb.com/try/download/community) if not installed.  
+3. **External Tools**:
+   - **MongoDB**: Ensure MongoDB is running locally or accessible.
 
-### Clone the Repository  
+### Clone the Repository
 ```bash
 git clone <repository-url>
 cd <repository-name>
-```  
+```
 
----
+## Usage
 
-## Usage  
-
-### Run the Application  
-1. Start the application using Streamlit:  
+### Run the Application
+1. Start the application using Streamlit:
    ```bash
-   streamlit run app.py
-   ```  
-2. Open the local URL provided in your terminal to access the chat interface.  
+   streamlit run advprog.py
+   ```
+2. Open the local URL provided in your terminal to access the chat interface.
 
-### Chatting with LLMs  
-1. Select a model from the sidebar (e.g., `llama3.2`, `phi3`).  
-2. Enter your query in the chat input field.  
-3. The assistant responds to your query and stores the conversation in MongoDB.  
+### Chatting with OpenAI
+1. Choose a model (`gpt-4` or `gpt-3.5-turbo`) from the sidebar.
+2. Enter your query in the chat input field.
+3. View the assistant's response and chat history directly in the interface.
 
-### Attaching Files and Question Answering  
-1. Upload `.txt` files one by one or multiple at once.  
-2. Ask questions related to the uploaded documents.  
-3. The assistant provides answers within the context of the uploaded documents.  
+### Storing Queries and Answers
+- All user inputs and assistant responses are stored in MongoDB with metadata, including the timestamp and model used.
 
-### Multi-Query and RAG Fusion  
-- Multi-query functionality ensures multiple queries are generated for each input, improving response relevance.  
-- Retrieval-Augmented Generation (RAG) fusion combines retrieved documents with your query to provide more accurate responses.  
+### Inspecting MongoDB
+1. Use the **Check MongoDB** button to view stored documents and metadata.
+2. Each document contains the query, assistant response, model information, and a timestamp.
 
-### Inspecting MongoDB  
-1. Use the **Check MongoDB** button to view stored documents and metadata.  
-2. View query history and assistant responses stored in MongoDB.  
+## Examples
 
----
+### Example 1: Basic Chat
+1. Select `gpt-4` from the sidebar.
+2. Enter the query: "What is the capital of Kazakhstan?"
+3. The assistant responds: "Astana."
+4. The interaction is saved in MongoDB with metadata.
 
-## Examples  
+### Example 2: Inspect MongoDB
+1. After several interactions, click the **Check MongoDB** button.
+2. View stored documents, IDs, and metadata in the Streamlit interface.
 
-### Example 1: Chat and Store in MongoDB  
-1. Select `llama3.2` from the sidebar.  
-2. Enter the query: "What is the constitution of the Republic of Kazakhstan?"  
-3. The assistant responds with an explanation based on the constitution document.  
-
-### Example 2: Inspect MongoDB  
-1. After several interactions, click the **Check MongoDB** button.  
-2. View stored queries, assistant responses, and metadata in the Streamlit interface.  
+## Additional Notes
+- Ensure MongoDB is running locally before starting the application.
+- Replace `"YOUR_OPENAI_API_KEY"` in the code with your actual OpenAI API key.
